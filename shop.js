@@ -190,7 +190,7 @@ document.addEventListener('DOMContentLoaded', function() {
         }
         localStorage.setItem('finalTotalPrice', finalTotalPrice)
         localStorage.setItem('finalTotalItems', finalTotalItems); // Store final total items in localStorage
-
+        
         iconCartSpan.innerText = totalQuantity;
         // Display final total price wherever needed
         console.log("Final Total Price: $" + finalTotalPrice);
@@ -242,5 +242,26 @@ document.addEventListener('DOMContentLoaded', function() {
 
     // Call initApp function to initialize the application
     initApp();
-
 });
+
+document.addEventListener("DOMContentLoaded", function() {
+    const popupButton = document.getElementById('popupButton');
+    const popupBanner = document.getElementById('popupBanner');
+    const closeButton = document.getElementById('closeButton');
+  
+    popupButton.addEventListener('click', function() {
+      popupBanner.style.display = 'block';
+      // Display success message using Swal.fire()
+      Swal.fire({
+        position: "center",
+        icon: "success",
+        title: "Check Out Successfully !",
+        showConfirmButton: false,
+        timer: 1500
+      });
+    });
+  
+    closeButton.addEventListener('click', function() {
+      popupBanner.style.display = 'none';
+    });
+  });
