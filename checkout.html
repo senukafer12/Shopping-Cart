@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="shop.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Check Out Page</title>
+</head>
+<body>
+    <div class="page">
+        <div class="layout">
+            <div class="returntoCart">
+                <a href="shop.html">Return to the Shop</a>
+                <h1>Welcome to the Check Out Page</h1>
+                <div class="list">
+                    <div class="item">
+                        <img src="cartimages/Unpic.png" alt="UN fund">   
+                    </div>
+                </div>
+            </div>
+
+            <div class="rightCorner">
+                <h1>CHECK OUT</h1>
+                <div class="formInfo">
+                    <div class="group">
+                        <label for="">Full Name</label>
+                        <input type="text" name="" id="">
+                    </div>
+                    <div class="group">
+                        <label for="">Address <span>*</span></label>
+                        <input type="text" name="" id="">
+                    </div>
+                    <div class="group">
+                        <label for="">E-mail</label>
+                        <input type="email" name="" id="" placeholder="info123@gmail.com" required>
+                    </div>
+                    <div class="group">
+                        <label for="">Country</label>
+                        <select name="" id="">
+                            <option value="">Choose..</option>
+                            <option value="Australia">Australia</option>
+                            <option value="China">China</option>
+                            <option value="Germany">Germany</option>
+                            <option value="India">India</option>
+                            <option value="Japan">Japan</option>
+                            <option value="New Zealand">New Zealand</option>
+                            <option value="Russia">Russia</option>
+                            <option value="Sri Lanka">Sri Lanka</option>
+                            <option value="UK">UK</option>
+                            <option value="USA">USA</option>
+                        </select>
+                    </div>
+                    <div class="group">
+                        <label for="">Phone Number</label>
+                        <input type="text" name="" id="">
+                    </div>
+                    <div class="group">
+                        <label for="">Card Number <span>*</span></label>
+                        <input type="number" name="" id="" placeholder="1111-1111-1111-1111" required>
+                    </div>
+                    <div class="group">
+                        <label for="">Name on card <span>*</span></label>
+                        <input type="text" name="" id="" required>
+                    </div>
+                    <div class="group">
+                        <label for="">Expiry date <span>*</span></label>
+                        <input type="date" name="" id="" required>
+                    </div>
+                    <div class="group">
+                        <label for="">CVC/CVV <span>*</span></label>
+                        <input type="text" name="" id="" required>
+                    </div>
+                    
+                </div>
+                <div class="return">
+                    <div class="row">
+                        <div>Total Items</div>
+                        <div id="finalTotalItems" class="finalTotalItems"></div>
+                    </div>
+                    <div class="row">
+                        <div>Total Price</div>
+                        <div id="finalTotalPrice" class="finalTotalPrice"></div>
+                    </div>
+                </div>
+                <button id="popupButton" class="checkoutBtn">CHECK OUT</button>
+                  <div id="popupBanner">
+
+                 </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="shop.js"></script>
+    <script>
+        // Retrieve finalTotalPrice from localStorage
+        let finalTotalPrice = localStorage.getItem('finalTotalPrice');
+        // Update the HTML element with the retrieved finalTotalPrice
+        document.getElementById('finalTotalPrice').innerText = "$" + finalTotalPrice;
+
+        let finalTotalItems = localStorage.getItem('finalTotalItems');
+        // Update the HTML element with the retrieved finalTotalPrice
+        document.getElementById('finalTotalItems').innerText = finalTotalItems;
+    </script>
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+</body>
+</html>
